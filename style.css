@@ -1,0 +1,72 @@
+body {
+    font-family: 'Odibee Sans', cursive;
+    text-align: left;
+}
+
+#after_submit {
+    visibility: hidden;
+}
+
+#quiz {
+    margin-left: 10px;
+    background:  rgb(204, 204, 204);
+    padding: 10px 20px 10px 20px;
+    width: 700px;
+    border-radius: 20px;
+    align-self: center;
+}
+
+h1 {
+   font-size: 30px;
+   text-align: center;
+}
+
+#button {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    transition-duration: .5s;
+    margin-top: 10px;
+    float: right;
+    background-color: gold;
+    color: black;
+}
+
+#title {
+    font-size: 28px;
+
+}
+
+#choices {
+    font-size: 24px;
+}
+
+.quizstyle {
+    display:flex;   
+    align-items: center;
+    justify-content: center;
+}
+
+.quiz {
+    overflow: hidden
+  }
+  
+  .choices {
+    float: left;
+    clear: none;
+  }
+  
+  label {
+    float: left;
+    clear: none;
+    display: block;
+    padding: 0px 1em 0px 8px;
+  }
+  
+  input[type=radio],
+  input.radio {
+    float: left;
+    clear: none;
+    margin: 2px 0 0 2px;
+}
