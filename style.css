@@ -17,6 +17,11 @@ body {
 }
 
 h1 {
+    font-size: 30px;
+    text-align: center;
+ }
+
+h2 {
    font-size: 30px;
    text-align: center;
 }
@@ -69,4 +74,24 @@ h1 {
     float: left;
     clear: none;
     margin: 2px 0 0 2px;
+}
+
+.hide {
+display: none;
+}
+
+#startBtn {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    transition-duration: .5s;
+    margin-top: 10px;
+    float: right;
+    background-color: green;
+    color: white;
+}
+
+#start {
+    font-size: 22px;
 }

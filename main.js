@@ -1,3 +1,5 @@
+// It is ony logging 3 question answers. 
+// says all the answers are wrong.
 
 
 var correct = 0;
@@ -13,11 +15,21 @@ var questions = [
     answer:"script src ="},
     {title:"4. Which of the following is not a reserved word in JavaScript?", choices:["interface", "throws", "program", "short"] ,  
     answer:"program"}, ]
+    
+    var counter = 120;
+    function startCounter () {
    
-
-  function displayQuestion() {
+    setInterval(function(){ 
+        counter --
+        console.log("counter", counter)
+        $("#counter").empty()
+        $("#counter").append(counter)
+    }, 1000);
+}
+    function displayQuestion() {
     $('#title').empty()
     $('#choices').empty()
+    
 
     var title = $("<p>").text(questions[questionIndex].title)
 
@@ -30,24 +42,33 @@ var questions = [
         $("#choices").prepend(choice, choiceText)
     }
 }
-displayQuestion()
 
 $("#button").on("click",function (){
     console.log("You chose", $("input[name=choice]:checked","#quiz").val());
-    if (questions[0].answer === $("input[name=choice]:checked","#quiz").val()){
-        console.log("CORRECT")
+    questionIndex ++
+    if (questions.length === questionIndex){
+        console.log("time stop")
+        $('#quiz').empty()
+        var score = $("<p>").text("  Correct " + correct + "  Incorrect " + incorrect)
+        $("#quiz").append(score)
+    } else if (questions[questionIndex].answer === $("input[name=choice]:checked","#quiz").val()){
         correct ++
-        questionIndex ++
+        console.log("CORRECT",correct)
+        
         displayQuestion()
-    } 
-    
-    else {
+    } else {
         console.log("INCORRECT")
         incorrect ++
-        questionIndex ++
+        counter = counter - 10
         displayQuestion()
     }
-    
+})
+
+$("#startBtn").on("click",function (){
+   $("#start").remove()
+   displayQuestion()
+   startCounter()
+   $("#button").removeClass("hide")
 })
 
 

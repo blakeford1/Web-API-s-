@@ -17,11 +17,19 @@
     <div class="quizstyle">
         <form id="quiz" name="quiz">
 
+            <div id="start">
+                <h2>Instructions</h2>
+                <p>This is a timed quiz that will test your knowledge of basic Javascipt functions. You will have 120s to complete four multiple choice questions. For each question you get wrong you will have 10s deducted from your time. At the end of the quiz your score will be displayed. Click the start button to begin.</p>
+                <button id="startBtn">START</button>
+            </div>
+
+            <div id="counter"></div>
+            
             <div id="title"></div>
 
             <div id="choices"></div>
 
-            <input id="button" type="button" value="Submit" > 
+            <input class="hide" id="button" type="button" value="Submit" > 
 
         </form>
     </div>
