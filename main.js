@@ -21,7 +21,6 @@ var questions = [
    
     setInterval(function(){ 
         counter --
-        console.log("counter", counter)
         $("#counter").empty()
         $("#counter").append(counter)
     }, 1000);
@@ -45,25 +44,29 @@ var questions = [
 
 $("#button").on("click",function (){
     console.log("You chose", $("input[name=choice]:checked","#quiz").val());
-    questionIndex ++
-    if (questions.length === questionIndex){
-        console.log("time stop")
-        $('#quiz').empty()
-        var score = $("<p>").text("  Correct " + correct + "  Incorrect " + incorrect)
-        $("#quiz").append(score)
-    } else if (questions[questionIndex].answer === $("input[name=choice]:checked","#quiz").val()){
+     if (questions[questionIndex].answer === $("input[name=choice]:checked","#quiz").val()){
         correct ++
-        console.log("CORRECT",correct)
-        
-        displayQuestion()
+        console.log("CORRECT", correct)
     } else {
-        console.log("INCORRECT")
+        console.log("INCORRECT", incorrect)
         incorrect ++
         counter = counter - 10
-        displayQuestion()
     }
-})
+    
+    
+    if (questions.length === questionIndex + 1){ 
+        console.log("time stop")
+        $('#quiz').empty()
+        var score = $("<p>").text(" Correct " + correct + "      Incorrect " + incorrect)
+        $("#quiz").append(score)
+    } else {
+        questionIndex ++
+        displayQuestion ()
+    }
 
+
+})
+// says all of the questions are incorrect 
 $("#startBtn").on("click",function (){
    $("#start").remove()
    displayQuestion()
