@@ -1,7 +1,3 @@
-// It is ony logging 3 question answers. 
-// says all the answers are wrong.
-
-
 var correct = 0;
 var incorrect = 0;
 var questionIndex = 0;
@@ -28,7 +24,6 @@ var questions = [
     function displayQuestion() {
     $('#title').empty()
     $('#choices').empty()
-    
 
     var title = $("<p>").text(questions[questionIndex].title)
 
@@ -53,7 +48,6 @@ $("#button").on("click",function (){
         counter = counter - 10
     }
     
-    
     if (questions.length === questionIndex + 1){ 
         console.log("time stop")
         $('#quiz').empty()
@@ -64,7 +58,6 @@ $("#button").on("click",function (){
         displayQuestion ()
     }
 
-
 })
 // says all of the questions are incorrect 
 $("#startBtn").on("click",function (){
@@ -73,6 +66,3 @@ $("#startBtn").on("click",function (){
    startCounter()
    $("#button").removeClass("hide")
 })
-
-
-
